@@ -1,57 +1,135 @@
-{
-    margin:0;
-    padding:0;
+/* Reset básico para zerar margens */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.cabecalho{
-padding:15px 25px;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color:#7e3e1c;
-}
-.cartao{
-    width: 260px;
-    height: 200px;
-}
-.cartao-imagem{
-    width: 100%;
-}
-body{
+
+body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     background-color: #f5f2f2;
+    font-family: Arial, sans-serif;
 }
-main{
+
+/* Cabeçalho */
+.cabecalho {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7e3e1c;
+}
+
+h1 {
+    color: #fff;
+    font-size: 24px;
+}
+
+.cabecalho-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Conteúdo Principal */
+main {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 30px 20px;
 }
-.cabecalho-link{
-    color: #fff;
-    text-decoration: none;
+
+h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 20px;
 }
-h1{
-    color:#fff;
-    font-size: 24px;
+
+/* Container que segura os cartões lado a lado */
+.container-cartoes {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-footer{
-background-color:#7e3e1c;
-padding: 15px 25px;
-color: #fff;
+
+/* Estrutura 3D do Flashcard */
+.cartao {
+    width: 260px;
+    height: 320px;
+    perspective: 1000px; /* Cria a profundidade para o efeito 3D */
 }
-.cartao-interno{
-    position:relative;
-    transition: transform 0.8s;
+
+/* Esconde o checkbox invisível */
+.cartao-toggle {
+    display: none;
+}
+
+/* Container interno que vai girar */
+.cartao-interno {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s ease;
     transform-style: preserve-3d;
+    cursor: pointer;
 }
-.cartao:hover.cartao-interno{
+
+/* Regra de Giro: funciona ao passar o mouse (:hover) ou ao clicar (:checked) */
+.cartao:hover .cartao-interno,
+.cartao-toggle:checked + .cartao-interno {
     transform: rotateY(180deg);
 }
-.cartao:hover.cartao-verso{
+
+/* Estilo comum da Frente e do Verso */
+.cartao-frente, 
+.cartao-verso {
     position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Esconde o lado oposto ao girar */
     border-radius: 12px;
-    box-shadow: 0 6px (0,0,0,0.15);
-    backface-visibility: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.cartao-frente p {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Verso do cartão */
+.cartao-verso {
+    background-color: #3b1d0d;
+    color: #ffffff;
+    transform: rotateY(180deg); /* Já começa invertido */
+}
+
+.cartao-verso p {
+    font-weight: 500;
+}
+
+/* Imagens dos cartões */
+.cartao-imagem {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #7e3e1c;
+    padding: 15px 25px;
+    color: #fff;
+    text-align: center;
 }

@@ -5,44 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLASH CARD</title>
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="cabecalho">
-<h1>confere aí</h1>
-   <nav>
-    <a href="#" class="cabecalho-link"> Inicio</a>
-   </nav>
+        <h1>Confere aí</h1>
+        <nav>
+            <a href="#" class="cabecalho-link">Início</a>
+        </nav>
+    </header>
 
-</header>
-<main>
-    <h2>Descubra a verdade passando o mouse</h2>
-    <section>
-        <article class="cartao">
-<div class="cartao-interno">
-<div class="cartao-frente">
-    <img src=""alt="pinguim" class="cartao-imagem">
-<p> pinguins conseguem voar como passaros</p>
-</div>
-<div class="cartao verso">
-<img src="" alt="pinguim" class="cartao-imagem">
-<p>pinguins não voam, mas são exelentes nadadores</p>
-</div>
-</div>
-        </article>
-        <article class="cartao">
-            <div class="cartao-interno">
-                <div class="cartao-frente">
-                    <img src="" alt="pinguin" class="cartao-imagem">
-                    <p> Pinguins coseguem voar como passaros!</p>
-                </div>
-            </div class= "cartao-verso"> 
-            <img src="" alt="pinguin" class="cartao-imagem">
-        </article>
-    </section>
-</main>
-<footer>
-<p>Projeto feito por Amanda</p>
-</footer>
+    <main>
+        <h2>Descubra a verdade passando o mouse ou clicando</h2>
+        <section class="container-cartoes">
+            
+            <!-- Cartão 1 -->
+            <article class="cartao">
+                <input type="checkbox" id="card-1" class="cartao-toggle">
+                <label for="card-1" class="cartao-interno">
+                    <div class="cartao-frente">
+                        <img src="images (1).jpeg" alt="Pinguim" class="cartao-imagem">
+                        <p>Pinguins conseguem voar como pássaros</p>
+                    </div>
+                    <div class="cartao-verso">
+                        <img src="images (2).jpeg" alt="Pinguim nadando" class="cartao-imagem">
+                        <p>Pinguins não voam, mas são excelentes nadadores!</p>
+                    </div>
+                </label>
+            </article>
+
+            <!-- Cartão 2 -->
+            <article class="cartao">
+                <input type="checkbox" id="card-2" class="cartao-toggle">
+                <label for="card-2" class="cartao-interno">
+                    <div class="cartao-frente">
+                        <img src="images.jpeg" alt="Pinguim" class="cartao-imagem">
+                        <p>Pinguins conseguem voar como pássaros!</p>
+                    </div>
+                    <div class="cartao-verso">
+                        <img src="images.jpeg" alt="Pinguim nadando" class="cartao-imagem">
+                        <p>Pinguins não voam, mas são excelentes nadadores!</p>
+                    </div>
+                </label>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Projeto feito por Amanda</p>
+    </footer>
 </body>
 </html>
